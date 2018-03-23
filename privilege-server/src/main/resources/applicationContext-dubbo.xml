@@ -5,15 +5,10 @@
 	 http://code.alibabatech.com/schema/dubbo	http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
 	default-lazy-init="true">
 	<description>Dubbo provider配置</description>
-
 	<dubbo:consumer check="false"/>
 
 	<!-- 提供方应用信息，用于计算依赖关系 -->
-	<dubbo:application name="privilege-server-center"/>
-
-	<!-- 使用zookeeper注册中心暴露服务地址 -->
-	<!-- 注册到这里 -->
-	<dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}" id="zookeeperService"/>
+	<dubbo:application name="privilege-server-center" owner="privilege-server-center"/>
 
 	<!-- 到这里调用 -->
 	<dubbo:registry protocol="zookeeper" address="${dubbo.registry.address.client}" id="zkClient"/>
